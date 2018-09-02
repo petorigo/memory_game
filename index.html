@@ -14,8 +14,60 @@
 
     <div class="container">
         <header>
-            <h1>Memory Game</h1>
+            <h1>เกมความจำ</h1>
         </header>
+
+        <ul class="deck" id="card-deck">
+            <li class="card" type="logo_1">
+				<img class="fa fa-1" />
+            </li>
+            <li class="card" type="logo_1">
+				<img class="fa fa-1" />
+            </li>
+            <li class="card" type="logo_2">
+				<img class="fa fa-2" />
+            </li>
+            <li class="card" type="logo_2" >
+				<img class="fa fa-2" />
+            </li>
+            <li class="card" type="logo_3">
+				<img class="fa fa-3" />
+            </li>
+            <li class="card" type="logo_3">
+				<img class="fa fa-3" />
+            </li>
+            <li class="card" type="logo_4">
+				<img class="fa fa-4" />
+            </li>
+            <li class="card" type="logo_4">
+				<img class="fa fa-4" />
+            </li>
+            <li class="card" type="logo_5">
+				<img class="fa fa-5" />
+            </li>
+            <li class="card" type="logo_5">
+				<img class="fa fa-5" />
+            </li>
+            <li class="card" type="logo_6">
+				<img class="fa fa-6" />
+            </li>
+            <li class="card" type="logo_6">
+				<img class="fa fa-6" />
+            </li>
+            <li class="card" type="logo_7">
+				<img class="fa fa-7" />
+            </li>
+            <li class="card" type="logo_7">
+				<img class="fa fa-7" />
+            </li>
+            <li class="card" type="logo_8">
+				<img class="fa fa-8" />
+            </li>
+            <li class="card" type="logo_8">
+				<img class="fa fa-8" />
+            </li>
+        </ul>
+		
 
         <section class="score-panel">
         	<ul class="stars">
@@ -23,83 +75,26 @@
         		<li><i class="fa fa-star"></i></li>
         		<li><i class="fa fa-star"></i></li>
         	</ul>
-
-        	<span class="moves">0</span> Move(s)
-
-            <div class="timer">
-            </div>
-
-            <div class="restart" onclick=startGame()>
-        		<i class="fa fa-repeat"></i>
-        	</div>
+        	กด <span class="moves">0</span> ครั้ง
+            <div class="timer"></div>
         </section>
-
-        <ul class="deck" id="card-deck">
-            <li class="card" type="diamond">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card" type="plane">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card match" type="anchor">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card" type="bolt" >
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card" type="cube">
-                <i class="fa fa-cube"></i>
-            </li>
-            <li class="card match" type="anchor">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card" type="leaf">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card" type="bicycle">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card" type="diamond">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card" type="bomb">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card" type="leaf">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card" type="bomb">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card open show" type="bolt">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card" type="bicycle">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card" type="plane">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card" type="cube">
-                <i class="fa fa-cube"></i>
-            </li>
-        </ul>
-
+		<br/>
+		<div class="restart" onclick=startGame()>
+			<i class="fa fa-repeat"></i>
+		</div>
+			
         <div id="popup1" class="overlay">
             <div class="popup">
-                <h2>Congratulations 🎉</h2>
+				<img class="congrats" src="./img/congrats.png" />
                 <a class="close" href=# >×</a>
-                <div class="content-1">
-                    Congratulations you're a winner 🎉🎉
-                </div>
+                <div class="content-1">ยินดีด้วย คุณคือผู้ชนะ</div>
                 <div class="content-2">
-                    <p>You made <span id=finalMove> </span> moves </p>
-                    <p>in <span id=totalTime> </span> </p>
-                    <p>Rating:  <span id=starRating></span></p>
+                    <p>คุณเปิดป้ายไป <span id=finalMove> </span> ครั้ง </p>
+                    <p>ด้วยเวลา <span id=totalTime> </span> </p>
+                    <p>ดาวคะแนน: <span id=starRating></span></p>
                 </div>
-                <button id="play-again"onclick="playAgain()">
-                    Play again 😄</a>
                 </button>
+                <button id="play-again" onclick="playAgain()">เริ่มเล่นใหม่อีกครั้ง</a>
             </div>
         </div>
 

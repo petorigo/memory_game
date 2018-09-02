@@ -27,6 +27,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	background: url(../img/background.png) center / 100% 100% no-repeat;
+	height: 100%;
 }
 
 h1 {
@@ -41,7 +43,7 @@ h1 {
 
 .deck {
 	width: 85%;
-	background: #716F71;
+	/*background: #716F71;*/
 	padding: 1rem;
 	border-radius: 4px;
 	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
@@ -56,7 +58,7 @@ h1 {
 	height: 3.7rem;
 	width: 3.7rem;
 	margin: 0.2rem 0.2rem;
-	background: #141214;;
+	/*background: #141214;*/
 	font-size: 0;
 	color: #ffffff;
 	border-radius: 5px;
@@ -69,7 +71,7 @@ h1 {
 
 .deck .card.open {
 	transform: rotateY(0);
-	background: #02b3e4;
+	/*background: #02b3e4;*/
 	cursor: default;
 	animation-name: flipInY;
 	-webkit-backface-visibility: visible !important;
@@ -83,7 +85,7 @@ h1 {
 
 .deck .card.match {
 	cursor: default;
-	background: #E5F720;
+	/*background: #E5F720;*/
 	font-size: 33px;
 	animation-name: rubberBand;
 	-webkit-backface-visibility: visible !important;
@@ -96,7 +98,7 @@ h1 {
 	-webkit-backface-visibility: visible !important;
 	backface-visibility: visible !important;
 	animation-duration: .75s;
-	background: #e2043b;
+	/*background: #e2043b;*/
 }
 
 .deck .card.disabled {
@@ -165,8 +167,8 @@ h1 {
 }
   
 .popup {
-	margin: 70px auto;
-	padding: 20px;
+	margin: 100px;
+	padding: 50px;
 	background: #ffffff;
 	border-radius: 5px;
 	width: 85%;
@@ -176,9 +178,9 @@ h1 {
 }
   
 .popup h2 {
-	margin-top: 0;
 	color: #333;
 	font-family: Tahoma, Arial, sans-serif;
+	text-align: center;
 }
 
 .popup .close {
@@ -213,14 +215,14 @@ h1 {
 }
 
 #play-again {
-	background-color: #141214;
+	background-color: yellow;
 	padding: 0.7rem 1rem;
-	font-size: 1.1rem;
+	font-size: 3rem;
 	display: block;
-	margin: 0 auto;
+	margin: 250px auto 150px auto;
 	width: 50%;
 	font-family: 'Gloria Hallelujah', cursive;
-	color: #ffffff;
+	color: red;
 	border-radius: 5px;
 }
 
@@ -317,21 +319,71 @@ h1 {
 
 @media (min-width: 768px) {
 	.container {
-		font-size: 22px;
+		font-size: 48px;
 	}
 
 	.deck {
-		width: 660px;
-		height: 680px;
+		width: 1000px;
+		height: 1000px;
 	}
 
 	.deck .card {
-		height: 125px;
-		width: 125px;
+		height: 220px;
+		width: 220px;
 	}
 
 	.popup {
-		width: 60%;
+		width: 85%;
+	}
+	
+	.deck .card img {
+		opacity: 1;
+		background: url(../img/logo.png) center / 100% 100% no-repeat;
+		height: 220px;
+		width: 220px;
+		display: block;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.deck .card.open img.fa-1, .deck .card.match img.fa-1 {
+		background: url(../img/logo_1.png) center / 100% 100% no-repeat;
+	}
+	
+	.deck .card.open img.fa-2, .deck .card.match img.fa-2 {
+		background: url(../img/logo_2.png) center / 100% 100% no-repeat;
+	}
+	
+	.deck .card.open img.fa-3, .deck .card.match img.fa-3 {
+		background: url(../img/logo_3.png) center / 100% 100% no-repeat;
+	}
+	
+	.deck .card.open img.fa-4, .deck .card.match img.fa-4 {
+		background: url(../img/logo_4.png) center / 100% 100% no-repeat;
+	}
+	
+	.deck .card.open img.fa-5, .deck .card.match img.fa-5 {
+		background: url(../img/logo_5.png) center / 100% 100% no-repeat;
+	}
+	
+	.deck .card.open img.fa-6, .deck .card.match img.fa-6 {
+		background: url(../img/logo_6.png) center / 100% 100% no-repeat;
+	}
+	
+	.deck .card.open img.fa-7, .deck .card.match img.fa-7 {
+		background: url(../img/logo_7.png) center / 100% 100% no-repeat;
+	}
+	
+	.deck .card.open img.fa-8, .deck .card.match img.fa-8 {
+		background: url(../img/logo_8.png) center / 100% 100% no-repeat;
+	}
+	
+	.restart i {
+		font-size: 100px;
+	}
+	
+	.congrats {
+		width: 100%;
+		margin: auto auto 100px auto;
 	}
 }
-
