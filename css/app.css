@@ -32,7 +32,12 @@ body {
 }
 
 h1 {
+	font-family: 'Coda', cursive;
+	/*
+	font-family: 'Itim', cursive;
 	font-family: 'Gloria Hallelujah', cursive;
+	
+	*/
 }
 
 
@@ -45,13 +50,13 @@ h1 {
 	width: 85%;
 	/*background: #716F71;*/
 	padding: 1rem;
-	border-radius: 4px;
+	border-radius: 14px;
 	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-	margin: 0 0 3em;
+	margin: 0 0 2em;
 }
 
 .deck .card {
@@ -61,7 +66,7 @@ h1 {
 	/*background: #141214;*/
 	font-size: 0;
 	color: #ffffff;
-	border-radius: 5px;
+	border-radius: 25px;
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
@@ -114,14 +119,14 @@ h1 {
 
 .score-panel {
 	text-align: left;
-	margin-bottom: 10px;
+	font-family: 'Itim', cursive;
 }
 
 .score-panel .stars {
 	margin: 0;
 	padding: 0;
 	display: inline-block;
-	margin: 0 5px 0 0;
+	margin: 0 30px 0 0;
 }
 
 .score-panel .stars li {
@@ -167,14 +172,15 @@ h1 {
 }
   
 .popup {
-	margin: 100px;
+	margin: 85px;
 	padding: 50px;
 	background: #ffffff;
-	border-radius: 5px;
+	border-radius: 25px;
 	width: 85%;
 	position: relative;
 	transition: all 5s ease-in-out;
-	font-family: 'Gloria Hallelujah', cursive;
+	/*font-family: 'Gloria Hallelujah', cursive;*/
+	font-family: 'Itim', cursive;
 }
   
 .popup h2 {
@@ -188,20 +194,27 @@ h1 {
 	top: 20px;
 	right: 30px;
 	transition: all 200ms;
-	font-size: 30px;
+	font-size: 100px;
 	font-weight: bold;
 	text-decoration: none;
 	color: #333;
+	padding: 10px 10px 50px 50px;
+	line-height: 80px;
+	font-family: cursive;
 }
 
 .popup .close:hover {
 	color: #E5F720;
 }
 
-.popup .content-1,
+.popup .content-1 {
+	margin: auto auto 250px auto;
+}
+
+.popup .content-0, .content-1,
 .content-2 {
 	max-height: 30%;
-	overflow: auto;
+	/*overflow: auto;*/
 	text-align: center;
 }
 
@@ -216,14 +229,14 @@ h1 {
 
 #play-again {
 	background-color: yellow;
-	padding: 0.7rem 1rem;
-	font-size: 3rem;
+	padding: 50px;
+	font-size: 3.5rem;
 	display: block;
-	margin: 250px auto 150px auto;
-	width: 50%;
-	font-family: 'Gloria Hallelujah', cursive;
+	margin: 250px auto 70px auto;
+	width: 70%;
 	color: red;
 	border-radius: 5px;
+	font-family: 'Itim', cursive;
 }
 
 /* animations */
@@ -319,7 +332,7 @@ h1 {
 
 @media (min-width: 768px) {
 	.container {
-		font-size: 48px;
+		font-size: 60px;
 	}
 
 	.deck {
@@ -341,6 +354,7 @@ h1 {
 		background: url(../img/logo.png) center / 100% 100% no-repeat;
 		height: 220px;
 		width: 220px;
+		border-radius: 20px;
 		display: block;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
@@ -380,10 +394,10 @@ h1 {
 	
 	.restart i {
 		font-size: 100px;
+		padding: 40px;
 	}
 	
 	.congrats {
 		width: 100%;
-		margin: auto auto 100px auto;
 	}
 }
