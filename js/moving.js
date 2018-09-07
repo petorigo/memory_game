@@ -88,7 +88,7 @@ var ChangingTitle = function () {
 ;
 
 var ct = new ChangingTitle(document.querySelector('.changing-title'));
-var texts = ['Falcon Insurance', 'Falcon Insurance'];
+var texts = ['Matching Insure', 'Matching Insure'];
 var count = 0;
 setInterval(function () {
   ct.changeText(texts[++count % texts.length]);
