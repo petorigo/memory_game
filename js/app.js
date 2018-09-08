@@ -52,12 +52,15 @@ document.body.onload = startGame();
 
 // @description function to start a new play 
 function startGame(){
+	// reset open cards
+	openedCards = [];
     // shuffle deck
     cards = shuffle(cards);
     // remove all exisiting classes from each card
     for (var i = 0; i < cards.length; i++){
         deck.innerHTML = "";
         [].forEach.call(cards, function(item) {
+			item.classList.remove("show", "open", "no-event","unmatched");
             deck.appendChild(item);
         });
         cards[i].classList.remove("show", "open", "match", "disabled");
@@ -115,15 +118,16 @@ function matched(){
 
 // description when cards don't match
 function unmatched(){
+	let card = [openedCards[0], openedCards[1]];
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
     disable();
     setTimeout(function(){
-        openedCards[0].classList.remove("show", "open", "no-event","unmatched");
-        openedCards[1].classList.remove("show", "open", "no-event","unmatched");
+        card[0].classList.remove("show", "open", "no-event","unmatched");
+        card[1].classList.remove("show", "open", "no-event","unmatched");
         enable();
         openedCards = [];
-    },1100);
+    },900);
 }
 
 
