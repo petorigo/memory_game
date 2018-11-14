@@ -34,13 +34,12 @@ body {
 h1 {
 	font-family: 'rubik', cursive;
 	font-size: 9vw;
-	text-shadow: 5px 5px 10px rgba(50, 50, 50, 1);;
+	text-shadow: 5px 5px 10px rgba(50, 50, 50, 1);
 	color: aliceblue;
 
-
 	color: #FFFFFF;
-text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
-color: #FFFFFF;
+	text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+	color: #FFFFFF;
 }
 
 
@@ -182,7 +181,7 @@ color: #FFFFFF;
 	border-radius: 25px;
 	width: 85%;
 	position: relative;
-	transition: all 5s ease-in-out;
+	transition: all 1s ease-in-out;
 	/*font-family: 'Gloria Hallelujah', cursive;*/
 	font-family: 'Itim', cursive;
 }
@@ -193,7 +192,7 @@ color: #FFFFFF;
 	text-align: center;
 }
 
-.popup .close {
+.popup .close, .popup .gameoverClose {
 	position: absolute;
 	top: 20px;
 	right: 30px;
@@ -207,7 +206,7 @@ color: #FFFFFF;
 	font-family: cursive;
 }
 
-.popup .close:hover {
+.popup .close:hover, .popup .gameoverClose:hover {
 	color: #E5F720;
 }
 
@@ -227,7 +226,7 @@ color: #FFFFFF;
 	opacity: 100 !important;
 }
 
-#starRating li {
+#starRating li, #starRatingTimeout li {
 	display: inline-block;
 }
 
@@ -341,7 +340,7 @@ color: #FFFFFF;
 
 	.deck {
 		width: 1000px;
-		height: 1000px;
+		height: 1200px;
 	}
 
 	.deck .card {
@@ -349,10 +348,10 @@ color: #FFFFFF;
 		width: 220px;
 		
 		background: rgb(255,255,255);
-background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%);
-background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
-background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
+		background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%);
+		background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
+		background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
 
 
 	}
@@ -408,6 +407,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		background: url(../img/logo_8.png) center / 100% 100% no-repeat;
 	}
 	
+	.deck .card.open img.fa-9, .deck .card.match img.fa-9 {
+		background: url(../img/logo_9.png) center / 100% 100% no-repeat;
+	}
+	
+	.deck .card.open img.fa-10, .deck .card.match img.fa-10 {
+		background: url(../img/logo_10.png) center / 100% 100% no-repeat;
+	}
+	
 	.restart i {
 		font-size: 100px;
 		padding: 40px;
@@ -417,6 +424,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	
 	.congrats {
 		width: 100%;
+	}
+
+	.failed {
+		filter: grayscale(100%);
 	}
 }
 
@@ -484,6 +495,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		background: url(../img/logo_8.png) center / 100% 100% no-repeat;
 	}
 	
+	.deck .card.open img.fa-9, .deck .card.match img.fa-9 {
+		background: url(../img/logo_9.png) center / 100% 100% no-repeat;
+	}
+	
+	.deck .card.open img.fa-10, .deck .card.match img.fa-10 {
+		background: url(../img/logo_10.png) center / 100% 100% no-repeat;
+	}
+
 	.restart i {
 		font-size: 80px;
 		padding: 20px;
@@ -519,7 +538,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	position: relative;
 	width: 65%;
 	overflow-y: hidden;
-	margin: 0px 0px 90px 0px;
+	margin: 30px 0px 50px 0px;
 	transform: translate3d(0,0,0);
 	
   }
