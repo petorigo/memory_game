@@ -36,6 +36,10 @@ let gameoverModal = document.getElementById("gameover");
 // array for opened cards
 var openedCards = [];
 
+// Blank panel
+const blank = document.getElementById("blank");
+
+var disableCount = 0;
 
 // @description shuffles cards
 // @param {array}
@@ -109,6 +113,15 @@ var displayCard = function () {
 // @description add opened cards to OpenedCards list and check if cards are match or not
 function cardOpen() {
     openedCards.push(this);
+
+    // Check empty card
+    if (this.type == "blank") {
+        moveCounter();
+        displayBlank();
+        unmatched();
+        return;
+    }
+
     var len = openedCards.length;
     if (len === 2) {
         moveCounter();
@@ -120,34 +133,56 @@ function cardOpen() {
     }
 };
 
-
 // @description when cards match
 function matched() {
-    openedCards[0].classList.add("match", "disabled");
-    openedCards[1].classList.add("match", "disabled");
-    openedCards[0].classList.remove("show", "open", "no-event");
-    openedCards[1].classList.remove("show", "open", "no-event");
+    if (openedCards.length >= 1) {
+        openedCards[0].classList.add("match", "disabled");
+        openedCards[0].classList.remove("show", "open", "no-event");
+    }
+    if (openedCards.length >= 2) {
+        openedCards[1].classList.add("match", "disabled");
+        openedCards[1].classList.remove("show", "open", "no-event");
+    }
     openedCards = [];
 }
 
 
 // description when cards don't match
 function unmatched() {
-    let card = [openedCards[0], openedCards[1]];
-    openedCards[0].classList.add("unmatched");
-    openedCards[1].classList.add("unmatched");
+    let card = [];
+    if (openedCards.length >= 1) {
+        openedCards[0].classList.add("unmatched");
+        card.push(openedCards[0]);
+    }
+    if (openedCards.length >= 2) {
+        openedCards[1].classList.add("unmatched");
+        card.push(openedCards[1]);
+    }
     disable();
     setTimeout(function () {
-        card[0].classList.remove("show", "open", "no-event", "unmatched");
-        card[1].classList.remove("show", "open", "no-event", "unmatched");
+        if (card.length >= 1) {
+            card[0].classList.remove("show", "open", "no-event", "unmatched");
+        }
+        if (card.length >= 2) {
+            card[1].classList.remove("show", "open", "no-event", "unmatched");
+        }
         enable();
         openedCards = [];
     }, 900);
 }
 
+function displayBlank() {
+    blank.classList.remove("hidden");
+    disable();
+    setTimeout(function () {
+        blank.classList.add("hidden");
+        enable();
+    }, 1500);
+}
 
 // @description disable cards temporarily
 function disable() {
+    disableCount++;
     Array.prototype.filter.call(cards, function (card) {
         card.classList.add('disabled');
     });
@@ -156,6 +191,10 @@ function disable() {
 
 // @description enable cards and disable matched cards
 function enable() {
+    disableCount--;
+    if(disableCount > 0) {
+        return;
+    }
     Array.prototype.filter.call(cards, function (card) {
         card.classList.remove('disabled');
         for (var i = 0; i < matchedCard.length; i++) {

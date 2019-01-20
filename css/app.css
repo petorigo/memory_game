@@ -415,6 +415,10 @@ h1 {
 		background: url(../img/logo_10.png) center / 100% 100% no-repeat;
 	}
 	
+	.deck .card.open img.fa-blank {
+		background: url(../img/logo_blank.png) center / 100% 100% no-repeat;
+	}
+	
 	.restart i {
 		font-size: 100px;
 		padding: 40px;
@@ -571,6 +575,11 @@ h1 {
 	animation-fill-mode: forwards;
 }
 
+#blank {
+	position: absolute;
+	margin: auto;
+}
 
-
-
+.hidden {
+	display: none;
+}
