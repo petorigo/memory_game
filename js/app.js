@@ -117,7 +117,6 @@ function cardOpen() {
     // Check empty card
     if (this.type == "blank") {
         moveCounter();
-        displayBlank();
         unmatched();
         return;
     }
@@ -127,6 +126,7 @@ function cardOpen() {
         moveCounter();
         if (openedCards[0].type === openedCards[1].type) {
             matched();
+            displayBlank();
         } else {
             unmatched();
         }
